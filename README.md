@@ -13,6 +13,9 @@ The network is divided into **two major domains** representing an enterprise int
 
 ---
 
+## Network Topology
+![Enterprise Network Topology](/Topology Image/Topology.png)
+
 ## Network Architecture
 
 ### Left Side – IPv4-Only Domain
