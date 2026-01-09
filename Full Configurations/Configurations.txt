@@ -3424,14 +3424,11 @@ retired false
 exit
 exit
 
-interface serial 0/1/1
-ip ips iosips out
+interface serial 0/1/0
+ip ips iosips in
 exit
-interface serial 0/2/0
-ip ips iosips out
-exit
-interface serial 0/2/1
-ip ips iosips out
+interface gigabitEthernet 0/0/0
+ip ips iosips in
 exit
 
 ! Inspect ICMP Requests from Outside
@@ -3539,6 +3536,7 @@ configure terminal
 access-list OUTSIDE_ACL extended permit tcp any host 10.11.12.235 eq 80
 access-list OUTSIDE_ACL extended permit tcp any host 10.11.12.235 eq 443
 access-list OUTSIDE_ACL extended permit tcp any host 10.11.12.235 eq 25
+access-list OUTSIDE_ACL extended permit tcp any host 10.11.12.235 eq 110
 access-list OUTSIDE_ACL extended permit udp any host 10.11.12.235 eq 53
 access-list OUTSIDE_ACL extended permit tcp any host 10.11.12.235 eq 21
 access-list OUTSIDE_ACL extended permit tcp any host 10.11.12.235 eq 20
